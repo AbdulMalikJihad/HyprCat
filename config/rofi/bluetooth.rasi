@@ -1,0 +1,94 @@
+configuration {
+    modi:                        "dmenu";
+    show-icons:                  false;
+    font:                        "JetBrainsMono Nerd Font 11";
+}
+/* --- Everforest Dark Color Palette --- */
+* {
+    bg-primary:     #232a2e; /* Everforest bg_hard */
+    bg-selected:    #343f44; /* Everforest bg3 (Surface selection) */
+    fg-primary:     #d3c6aa; /* Main Text Foreground */
+    fg-muted:       #7a8478; /* Muted Grey-Green Text */
+    accent:         #a7c080; /* Signature Everforest Green */
+    
+    background-color: transparent;
+    text-color:       @fg-primary;
+}
+
+window {
+    transparency:        "real";
+    location:            center;
+    anchor:              center;
+    width:               500px;
+    height:              450px;
+    enabled:             true;
+    border:              2px;
+    border-color:        @accent;
+    border-radius:       12px;
+    background-color:    @bg-primary;
+}
+mainbox {
+    enabled:             true;
+    spacing:             12px;
+    padding:             20px;
+    children:            [ "inputbar", "listview" ];
+}
+inputbar {
+    enabled:             true;
+    spacing:             10px;
+    padding:             10px 15px;
+    border-radius:       8px;
+    background-color:    @bg-selected;
+    children:            [ "textbox-prompt-colon", "entry" ];
+}
+textbox-prompt-colon {
+    enabled:             true;
+    expand:              false;
+    str:                 " ";
+    text-color:          @accent;
+}
+entry {
+    enabled:             true;
+    placeholder:         "Search devices...";
+    placeholder-color:   @fg-muted;
+}
+listview {
+    enabled:             true;
+    columns:             1;
+    lines:               7;
+    cycle:               true;
+    dynamic:             true;
+    scrollbar:           false;
+    layout:              vertical;
+    spacing:             6px;
+    margin:              5px 0px 0px 0px;
+}
+element {
+    enabled:             true;
+    padding:             10px 14px;
+    border-radius:       8px;
+    cursor:              pointer;
+    children:            [ "element-text" ];
+}
+element normal.normal {
+    background-color:    transparent;
+    text-color:          @fg-primary;
+}
+element alternate.normal {
+    background-color:    transparent;
+    text-color:          @fg-primary;
+}
+element selected.normal {
+    background-color:    @bg-selected;
+    text-color:          @accent;
+    border:              1px;
+    border-color:        @accent;
+}
+element-text {
+    enabled:             true;
+    vertical-align:      0.5;
+    text-color:          inherit;
+}
+element-icon {
+    enabled:             false;
+}

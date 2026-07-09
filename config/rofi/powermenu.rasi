@@ -1,0 +1,83 @@
+/* =========================================================================
+   Fixed Power Menu Theme - Everforest Dark
+   ========================================================================= */
+
+configuration {
+    show-icons:                 false;
+    font:                       "Sans 13";
+}
+
+/* --- Everforest Dark Color Palette --- */
+* {
+    bg-primary:     #232a2e; /* Everforest bg_hard */
+    bg-selected:    #343f44; /* Everforest bg3 (Surface selection) */
+    fg-primary:     #d3c6aa; /* Main Text Foreground */
+    fg-muted:       #7a8478; /* Muted Grey-Green Text */
+    accent:         #a7c080; /* Signature Everforest Green */
+    
+    background-color: transparent;
+    text-color:       @fg-primary;
+}
+
+/* --- Main Window --- */
+window {
+    transparency:        "real";
+    location:            center;
+    anchor:              center;
+    width:               700px;
+    height:              120px; /* Fixed height constraint */
+
+    border:              2px;
+    border-color:        @accent;
+    border-radius:       12px;
+    background-color:    @bg-primary;
+}
+
+mainbox {
+    children:            [ "listview" ];
+    padding:             20px;
+}
+
+/* --- Power Options Row --- */
+listview {
+    enabled:             true;
+    columns:             5;       /* 5 columns side-by-side */
+    lines:               1;       /* 1 row */
+    spacing:             10px;
+    cycle:               true;
+    dynamic:             false;   /* Prevent collapsing */
+    scrollbar:           false;
+}
+
+/* --- Individual Button Elements --- */
+element {
+    enabled:             true;
+    padding:             15px 0px; /* Vertical spacing inside button */
+    border-radius:       8px;
+    cursor:              pointer;
+}
+
+/* Normal / Inactive Buttons */
+element normal.normal {
+    background-color:    @bg-selected;
+    text-color:          @fg-primary;
+}
+
+/* Fixes alternating focus variations */
+element alternate.normal {
+    background-color:    @bg-selected;
+    text-color:          @fg-primary;
+}
+
+/* Highlighted / Selected Button */
+element selected.normal {
+    background-color:    @accent;
+    text-color:          @bg-primary; /* Contrast dark text on red backdrop */
+}
+
+element-text {
+    cursor:              inherit;
+    vertical-align:      0.5;
+    horizontal-align:    0.5; /* Perfectly centered power glyphs */
+    text-color:          inherit;
+}

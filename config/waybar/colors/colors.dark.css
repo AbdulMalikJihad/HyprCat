@@ -1,0 +1,29 @@
+/* Tokyo night dark enhanced color theme */
+
+@define-color module-bg     rgba(8, 8, 11, 0.9);
+@define-color tooltip-bg    @module-bg;
+@define-color inactive      #787c99;
+@define-color fg            #acb0d0;
+@define-color workspace-fg  @fg;
+@define-color highlight     @inactive;
+
+@define-color red           #f7768e;
+@define-color blue          #7aa2f7;
+@define-color yellow        #e0af68;
+@define-color green         #41a6b5;
+@define-color base-bg       #1e2326; /* Hard Dark Backdrop */
+@define-color module-bg     #2d353b; /* Everforest bg_status / Panels */
+@define-color tooltip-bg    #232a2e; /* Everforest bg_hard */
+
+@define-color fg            #d3c6aa; /* Clear Ivory Foreground text */
+@define-color workspace-fg  #a7c080; /* Forest Green active indicators */
+@define-color inactive      #475257; /* Muted Material Gray */
+@define-color highlight     #343f44; /* Clean hover selection highlights */
+
+/* Theme Accent Tokens */
+@define-color red           #e67e80; /* Warning / Critical Alert */
+@define-color yellow        #dbbc7f; /* Moderate Warning / Amber */
+@define-color green         #a7c080; /* Power Saving Success Moss */
+@define-color blue          #7fbbb3; /* Core Control Panel Accents */
+@define-color purple        #d699b6; /* Supplemental Utility Links */
+@define-color aqua          #83c092; /* Secondary Interactive State */

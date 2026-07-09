@@ -1,0 +1,9 @@
+[Default Applications]
+text/markdown=code.desktop
+text/x-lua=code.desktop
+text/plain=code.desktop
+
+[Added Associations]
+text/markdown=code.desktop;
+text/x-lua=code.desktop;
+text/plain=code.desktop;

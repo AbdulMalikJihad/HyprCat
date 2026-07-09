@@ -1,0 +1,87 @@
+/* Base notification container box */
+.notification {
+    background: #2b3339;       /* Everforest bg_soft */
+    border: 2px solid #a7c080;  /* Everforest Green */
+    border-radius: 12px;
+    padding: 10px;
+    margin: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Text styling inside notifications */
+.notification-content {
+    margin: 5px;
+}
+
+.notification-default-text .notification-title {
+    color: #d3c6aa;            /* Everforest Main Foreground */
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.notification-default-text .notification-body {
+    color: #9da9a0;            /* Everforest Muted Grey */
+    font-size: 13px;
+}
+
+/* --- THEME SPECIFIC STATES FOR BATTERY --- */
+
+/* Low battery notification styling (Normal Urgency) */
+.low {
+    border-color: #dbbc7f;     /* Everforest Warm Amber/Yellow */
+}
+
+/* Critical battery notification styling (Critical Urgency) */
+.critical {
+    background: #2b3339;
+    border: 2px solid #e67e80;  /* Everforest Red */
+}
+
+.critical .notification-title {
+    color: #e67e80;            /* Turn the title red for danger alerts */
+}
+
+/* Action button styles (if you click them) */
+.notification-action {
+    background: #343f44;       /* Everforest bg3 (Surface) */
+    border-radius: 6px;
+    color: #d3c6aa;
+    margin: 4px;
+}
+
+.notification-action:hover {
+    background: #475257;       /* Everforest bg5 (Hover surface) */
+}
+
+/* The Main Control Center Window: */
+.control-center {
+    background-color: rgba(35, 42, 46, 0.92); /* Rich Everforest Dark Background */
+    border: 2px solid #343f44;                 /* Subtle separator border */
+    border-radius: 12px;
+}
+
+/* The "Clear All" Button: */
+.widget-title button {
+    background: #e67e80;       /* Everforest Red */
+    border-radius: 8px;
+    color: #232a2e;            /* Dark text for contrast */
+    font-weight: bold;
+}
+.widget-title button:hover {
+    background: #f39697;       /* Lighter tinted red on hover */
+}
+
+/* The "Do Not Disturb" Switch/Toggle: */
+.widget-dnd switch {
+    background-color: #343f44; /* Dark gray-green toggle track */
+    border-radius: 15px;
+}
+.widget-dnd switch:checked {
+    background-color: #a7c080; /* Forest Green when turned ON */
+}
+
+/* The "No Notifications" Placeholder (Bell & Text): */
+.control-center .notification-row .blank-title {
+    font-weight: bold;
+    color: #7a8478;            /* Calming faded moss green-gray */
+}

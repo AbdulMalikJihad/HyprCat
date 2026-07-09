@@ -1,0 +1,114 @@
+/* =========================================================================
+   Minimal Dark Rofi Theme - Everforest Dark
+   ========================================================================= */
+
+configuration {
+    modi:                       "drun,run";
+    show-icons:                 true;
+    display-drun:               "";
+    drun-display-format:        "{name}";
+    font:                       "JetBrainsMono Nerd Font 11";
+}
+
+/* --- Everforest Dark Color Palette --- */
+* {
+    bg-primary:     #232a2e; /* Everforest bg_hard */
+    bg-selected:    #343f44; /* Everforest bg3 (Surface selection) */
+    fg-primary:     #d3c6aa; /* Main Text Foreground */
+    fg-muted:       #7a8478; /* Muted Grey-Green Text */
+    accent:         #a7c080; /* Signature Everforest Green */
+    
+    background-color: transparent;
+    text-color:       @fg-primary;
+}
+
+/* --- Main Window --- */
+window {
+    transparency:        "real";
+    location:            center;
+    anchor:              center;
+    width:               600px;
+    x-offset:            0px;
+    y-offset:            0px;
+
+    enabled:             true;
+    border:              2px;
+    border-color:        @accent;
+    border-radius:       12px;
+    background-color:    @bg-primary;
+    cursor:              "default";
+}
+
+/* --- Main Container --- */
+mainbox {
+    enabled:             true;
+    spacing:             10px;
+    padding:             20px;
+    children:            [ "inputbar", "listview" ];
+}
+
+/* --- Search Bar Container --- */
+inputbar {
+    enabled:             true;
+    spacing:             10px;
+    padding:             10px 15px;
+    border-radius:       8px;
+    background-color:    @bg-selected;
+    children:            [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:             true;
+    text-color:          @accent;
+}
+
+entry {
+    enabled:             true;
+    cursor:              text;
+    placeholder:         "Search applications...";
+    placeholder-color:   @fg-muted;
+}
+
+/* --- Results List --- */
+listview {
+    enabled:             true;
+    columns:             1;
+    lines:               8;
+    cycle:               true;
+    dynamic:             true;
+    scrollbar:           false;
+    layout:              vertical;
+    reverse:             false;
+    fixed-height:        true;
+    fixed-columns:       true;
+    
+    spacing:             5px;
+    margin:              5px 0px 0px 0px;
+}
+
+/* --- Individual Row Element --- */
+element {
+    enabled:             true;
+    spacing:             12px;
+    padding:             8px 12px;
+    border-radius:       8px;
+    cursor:              pointer;
+}
+
+element normal.normal {
+    background-color:    transparent;
+    text-color:          @fg-primary;
+}
+
+/* Alternate row styling (Fixes any zebra striping conflicts) */
+element alternate.normal {
+    background-color:    transparent;
+    text-color:          @fg-primary;
+}
+
+element selected.normal {
+    background-color:    @bg-selected;
+    text-color:          @accent;
+    border:              1px;
+    border-color:        @accent;
+}

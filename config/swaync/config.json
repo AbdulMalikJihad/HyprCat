@@ -1,0 +1,17 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-margin-top": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-left": 10,
+  "control-center-width": 400,
+  "control-center-height": 600,
+  "fit-to-screen": false,
+  "scripts": {
+    "play-sound": {
+      "exec": "sh -c 'swaync-client -D | grep -q true || mpv --no-video --volume=100 /home/jihad/.config/swaync/mixkit-correct-answer-tone-2870.wav'",
+      "run-on": "receive"
+    }
+  }
+}

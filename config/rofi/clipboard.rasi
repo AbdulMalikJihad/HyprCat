@@ -1,0 +1,130 @@
+/* =========================================================================
+   Rofi Clipboard Manager Theme - Everforest Dark
+   ========================================================================= */
+
+configuration {
+    modi:                        "dmenu";
+    show-icons:                  false; /* No icons needed for clipboard text */
+    font:                        "JetBrainsMono Nerd Font 10";
+}
+
+/* --- Everforest Dark Color Palette --- */
+* {
+    bg-primary:     #232a2e; /* Everforest bg_hard */
+    bg-secondary:   #1e2326; /* Everforest Darker Backdrop */
+    bg-selected:    #343f44; /* Everforest bg3 (Surface selection) */
+    fg-primary:     #d3c6aa; /* Main Text Foreground */
+    fg-muted:       #7a8478; /* Muted Grey-Green Text */
+    accent:         #a7c080; /* Signature Everforest Green */
+    
+    background-color: transparent;
+    text-color:       @fg-primary;
+}
+
+/* --- Main Window --- */
+window {
+    transparency:        "real";
+    location:            center;
+    anchor:              center;
+    width:               750px; /* Wide enough to read clipped URLs/sentences */
+    
+    enabled:             true;
+    border:              2px;
+    border-color:        @accent;
+    border-radius:       10px;
+    background-color:    @bg-primary;
+}
+
+mainbox {
+    enabled:             true;
+    spacing:             10px;
+    padding:             20px;
+    background-color:    transparent;
+    children:            [ "inputbar", "listview" ];
+}
+
+/* --- Input Bar Area --- */
+inputbar {
+    enabled:             true;
+    spacing:             10px;
+    padding:             5px 10px;
+    border-radius:       6px;
+    background-color:    @bg-secondary;
+    border:              1px;
+    border-color:        #2d353b;
+    children:            [ "prompt", "entry", "textbox-help" ];
+}
+
+prompt {
+    enabled:             true;
+    background-color:    transparent;
+    text-color:          @accent;
+    font:                "JetBrainsMono Nerd Font Bold 10";
+}
+
+entry {
+    enabled:             true;
+    cursor:              text;
+    placeholder:         "Search Clipboard...";
+    placeholder-color:   @fg-muted;
+}
+
+/* --- Top-Right Clear Shortcut Help Prompt --- */
+textbox-help {
+    expand:              false;
+    text-color:          @fg-muted;
+    content:             "󰗁 Alt+Del Clear";
+    font:                "JetBrainsMono Nerd Font 9";
+    vertical-align:      0.5;
+}
+
+/* --- History List View --- */
+listview {
+    enabled:             true;
+    columns:             1; /* Simple list format */
+    lines:               10;
+    cycle:               true;
+    dynamic:             true;
+    scrollbar:           false;
+    layout:              vertical;
+    
+    spacing:             6px;
+    margin:              5px 0px 0px 0px;
+}
+
+/* --- Clipboard Entries --- */
+element {
+    enabled:             true;
+    orientation:         horizontal;
+    spacing:             10px;
+    padding:             10px 12px;
+    border-radius:       6px;
+    cursor:              pointer;
+}
+
+/* Normal rows */
+element normal.normal {
+    background-color:    transparent;
+    text-color:          @fg-primary;
+}
+
+/* Fixes alternating row background variations */
+element alternate.normal {
+    background-color:    transparent;
+    text-color:          @fg-primary;
+}
+
+/* Selected row */
+element selected.normal {
+    background-color:    @bg-selected;
+    text-color:          @fg-primary;
+    border:              1px;
+    border-color:        @accent;
+}
+
+/* --- Entry Text Formatting --- */
+element-text {
+    cursor:              inherit;
+    vertical-align:      0.5;
+    horizontal-align:    0.0;
+}

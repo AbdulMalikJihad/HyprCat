@@ -1,0 +1,122 @@
+/* =========================================================================
+   Rofi Wallpaper Grid Theme with Image Previews
+   ========================================================================= */
+
+configuration {
+    modi:                        "dmenu";
+    show-icons:                  true; /* Crucial: enables thumbnails */
+    font:                        "JetBrainsMono Nerd Font 11";
+}
+
+/* --- Everforest Dark Color Palette --- */
+* {
+    bg-primary:     #232a2e; /* Everforest bg_hard */
+    bg-selected:    #343f44; /* Everforest bg3 (Surface selection) */
+    fg-primary:     #d3c6aa; /* Main Text Foreground */
+    fg-muted:       #7a8478; /* Muted Grey-Green Text */
+    accent:         #a7c080; /* Signature Everforest Green */
+    
+    background-color: transparent;
+    text-color:       @fg-primary;
+}
+
+/* --- Main Window --- */
+window {
+    transparency:        "real";
+    location:            center;
+    anchor:              center;
+    width:               900px; /* Wider window for previews */
+    height:              650px;
+
+    enabled:             true;
+    border:              2px;
+    border-color:        @accent;
+    border-radius:       12px;
+    background-color:    @bg-primary;
+}
+
+mainbox {
+    enabled:             true;
+    spacing:             15px;
+    padding:             25px;
+    children:            [ "inputbar", "listview" ];
+}
+
+/* --- Search Bar --- */
+inputbar {
+    enabled:             true;
+    spacing:             10px;
+    padding:             10px 15px;
+    border-radius:       8px;
+    background-color:    @bg-selected;
+    children:            [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    enabled:             true;
+    expand:              false;
+    str:                 " ";
+    text-color:          @accent;
+}
+
+entry {
+    enabled:             true;
+    placeholder:         "Type to filter wallpapers...";
+    placeholder-color:   @fg-muted;
+}
+
+/* --- The Thumbnail Grid --- */
+listview {
+    enabled:             true;
+    columns:             3;        /* 3 horizontal images per row */
+    lines:               2;        /* 2 rows visible at once */
+    cycle:               true;
+    dynamic:             true;
+    scrollbar:           false;
+    layout:              vertical;
+    
+    spacing:             18px;
+    margin:              0px;
+}
+
+/* --- Grid Elements (The Cards) --- */
+element {
+    enabled:             true;
+    orientation:         vertical; /* Image stacked on top of text */
+    spacing:             8px;
+    padding:             12px;
+    border-radius:       10px;
+    cursor:              pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @fg-primary; /* Use your own color variable name here */
+}
+
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  @fg-primary; /* This kills the zebra stripe! */
+}
+
+element selected.normal {
+    background-color:    @bg-selected;
+    text-color:          @accent;
+    border:              1.5px;
+    border-color:        @accent;
+}
+
+/* --- The Wallpaper Preview Thumbnail --- */
+element-icon {
+    size:                140px;    /* Large square preview size */
+    cursor:              inherit;
+    horizontal-align:    0.5;
+}
+
+/* --- The Wallpaper Name text --- */
+element-text {
+    horizontal-align:    0.5;      /* Center name below image */
+    vertical-align:      0.5;
+    cursor:              inherit;
+    text-color:          inherit;
+}
