@@ -62,6 +62,7 @@
 
 #right, 
 #left,
+#battery-tray,
 #right-hidden-top, 
 #left-hidden-top {
     padding: 2px 10px;
@@ -75,6 +76,10 @@
 }
 
 #right, #left  {
+    margin: 0 8px;
+}
+
+#battery-tray {
     margin: 0 8px;
 }
 

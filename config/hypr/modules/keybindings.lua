@@ -10,8 +10,11 @@ hl.bind("SUPER + F", hl.dsp.exec_cmd("nautilus"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(programs.menu_cmd))
 hl.bind(mainMod .. " + CTRL + space", hl.dsp.exec_cmd(programs.wall_cmd))
+
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(programs.browser))
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(programs.bluetooth_cmd))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(programs.N8N_cmd))
+hl.bind(mainMod .. " + PERIOD", hl.dsp.exec_cmd(programs.emoji_picker_cmd))
 
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(programs.power_cmd))
 hl.bind("Print", hl.dsp.exec_cmd(programs.screenshot_cmd))

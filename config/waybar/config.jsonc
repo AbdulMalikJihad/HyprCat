@@ -22,13 +22,18 @@
             "click-to-reveal": true
         },
         "modules" : [
-            "custom/arrow-right", "battery", "cpu", "load"
+            "custom/arrow-right", "cpu", "load"
         ]
     },
 
     "group/left-hidden-top" : {
         "orientation": "horizontal",
         "modules" : [ "power-profiles-daemon", "group/left-hidden" ]
+    },
+
+    "group/battery-tray" : {
+        "orientation": "horizontal",
+        "modules" : [ "battery" ]
     },
 
     "group/right" : {
@@ -55,7 +60,7 @@
         "modules" : [ "group/right-hidden",  "custom/ctlcenter" ]
     },
 
-    "modules-left"   : ["group/left-hidden-top", "group/left"],
+    "modules-left"   : ["group/left-hidden-top", "group/battery-tray", "group/left"],
     "modules-center" : ["clock"],
     "modules-right"  : [ "group/right",  "group/right-hidden-top"],
 

@@ -10,5 +10,7 @@ M.wifi_cmd = "~/.config/hypr/scripts/wifi-menu.sh"
 M.screenshot_cmd = "~/.config/hypr/scripts/screenshot.sh"
 M.clipboard_cmd = "~/.config/hypr/scripts/clipboard-picker.sh"
 M.bluetooth_cmd = "~/.config/hypr/scripts/bluetooth-menu.sh"
+M.N8N_cmd = "~/.config/hypr/scripts/docker-n8n-menu.sh"
+M.emoji_picker_cmd = "~/.config/hypr/scripts/emoji-picker.sh"
 
 return M

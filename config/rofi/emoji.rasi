@@ -1,9 +1,7 @@
 configuration {
-    modi:                       "drun,run";
-    show-icons:                 true;
-    display-drun:               "";
-    drun-display-format:        "{name}";
-    font:                       "JetBrainsMono Nerd Font 11";
+    modi:                        "dmenu";
+    show-icons:                  false;
+    font:                        "JetBrainsMono Nerd Font 11";
 }
 
 /* --- Everforest Dark Color Palette --- */
@@ -18,77 +16,66 @@ configuration {
     text-color:       @fg-primary;
 }
 
-/* --- Main Window --- */
 window {
     transparency:        "real";
     location:            center;
     anchor:              center;
-    width:               600px;
-    x-offset:            0px;
-    y-offset:            0px;
-
+    width:               500px;
+    height:              450px;
     enabled:             true;
     border:              2px;
     border-color:        @accent;
     border-radius:       12px;
     background-color:    @bg-primary;
-    cursor:              "default";
 }
 
-/* --- Main Container --- */
 mainbox {
     enabled:             true;
-    spacing:             10px;
+    spacing:             12px;
     padding:             20px;
     children:            [ "inputbar", "listview" ];
 }
 
-/* --- Search Bar Container --- */
 inputbar {
     enabled:             true;
     spacing:             10px;
     padding:             10px 15px;
     border-radius:       8px;
     background-color:    @bg-selected;
-    children:            [ "prompt", "entry" ];
+    children:            [ "textbox-prompt-colon", "entry" ];
 }
 
-prompt {
+textbox-prompt-colon {
     enabled:             true;
+    expand:              false;
+    str:                 "🐱";
     text-color:          @accent;
 }
 
 entry {
     enabled:             true;
-    cursor:              text;
-    placeholder:         "Search applications...";
+    placeholder:         "Search for emoji";
     placeholder-color:   @fg-muted;
 }
 
-/* --- Results List --- */
 listview {
     enabled:             true;
     columns:             1;
-    lines:               8;
+    lines:               7;
     cycle:               true;
     dynamic:             true;
     scrollbar:           false;
     layout:              vertical;
-    reverse:             false;
-    fixed-height:        true;
-    fixed-columns:       true;
-    
-    spacing:             5px;
+    spacing:             6px;
     margin:              5px 0px 0px 0px;
 }
 
-/* --- Individual Row Element --- */
 element {
     enabled:             true;
-    spacing:             12px;
-    padding:             8px 12px;
+    padding:             10px 14px;
     border-radius:       8px;
     cursor:              pointer;
+    children:            [ "element-text" ];
 }
 
 element normal.normal {
@@ -96,7 +83,6 @@ element normal.normal {
     text-color:          @fg-primary;
 }
 
-/* Alternate row styling (Fixes any zebra striping conflicts) */
 element alternate.normal {
     background-color:    transparent;
     text-color:          @fg-primary;
@@ -107,4 +93,14 @@ element selected.normal {
     text-color:          @accent;
     border:              1px;
     border-color:        @accent;
+}
+
+element-text {
+    enabled:             true;
+    vertical-align:      0.5;
+    text-color:          inherit;
+}
+
+element-icon {
+    enabled:             false;
 }

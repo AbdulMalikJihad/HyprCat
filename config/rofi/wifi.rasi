@@ -3,6 +3,7 @@ configuration {
     show-icons:                  false;
     font:                        "JetBrainsMono Nerd Font 11";
 }
+
 /* --- Everforest Dark Color Palette --- */
 * {
     bg-primary:     #232a2e; /* Everforest bg_hard */
@@ -27,12 +28,14 @@ window {
     border-radius:       12px;
     background-color:    @bg-primary;
 }
+
 mainbox {
     enabled:             true;
     spacing:             12px;
     padding:             20px;
     children:            [ "inputbar", "listview" ];
 }
+
 inputbar {
     enabled:             true;
     spacing:             10px;
@@ -41,17 +44,20 @@ inputbar {
     background-color:    @bg-selected;
     children:            [ "textbox-prompt-colon", "entry" ];
 }
+
 textbox-prompt-colon {
     enabled:             true;
     expand:              false;
     str:                 " ";
     text-color:          @accent;
 }
+
 entry {
     enabled:             true;
     placeholder:         "Search networks / Enter password...";
     placeholder-color:   @fg-muted;
 }
+
 listview {
     enabled:             true;
     columns:             1;
@@ -63,6 +69,7 @@ listview {
     spacing:             6px;
     margin:              5px 0px 0px 0px;
 }
+
 element {
     enabled:             true;
     padding:             10px 14px;
@@ -70,25 +77,30 @@ element {
     cursor:              pointer;
     children:            [ "element-text" ];
 }
+
 element normal.normal {
     background-color:    transparent;
     text-color:          @fg-primary;
 }
+
 element alternate.normal {
     background-color:    transparent;
     text-color:          @fg-primary;
 }
+
 element selected.normal {
     background-color:    @bg-selected;
     text-color:          @accent;
     border:              1px;
     border-color:        @accent;
 }
+
 element-text {
     enabled:             true;
     vertical-align:      0.5;
     text-color:          inherit;
 }
+
 element-icon {
     enabled:             false;
 }
